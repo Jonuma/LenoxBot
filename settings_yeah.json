@@ -1,0 +1,30 @@
+{
+    "owners": ["150411168492552192"],
+    "administrators": ["150411168492552192"],
+    "token": "NjMxNDkzMTU1NjA2MjMzMDg5.XZ30lA.mBDM8YJ1MDhoNefWr-JpP5NfB-w",
+    "prefix": "t!",
+    "auddKey": "Audd Lyrics API Key",
+    "googleKey": "Google Custom Search API Key",
+    "googlekey": "Youtube API key",
+    "clientID_Auth": "631493155606233089",
+    "clientSecret_Auth": "D0ARZUF7hnb8SYACFYD8V_PdIMqX9j3u",
+    "callbackURL_Auth": "Callback URL Auth",
+    "dbl_apikey": "Your Discord Bot List API Token",
+    "websitehostname": "localhost",
+    "websiteport": "12000",
+    "keychannel": "Required. Discord Textchannel ID where all premium keys should be posted in",
+    "db": {
+        "user": "admin",
+		"password": "admin",
+		"host": "localhost",
+		"port": "27017"
+    },
+    "dblAuthorization": "Autorization Code for API verification",
+    "botMainDiscordServer": "Required. The main/support Discord Server ID of this bot",
+    "log_channels": {
+	    "logs": "666",
+	    "warnings": "666",
+	    "errors": "666"
+    },
+    "NODE_ENV": "production"
+}

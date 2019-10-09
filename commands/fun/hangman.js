@@ -195,6 +195,8 @@ module.exports = class hangmanCommand extends LenoxCommand {
                     /* eslint no-lonely-if: 0 */
                     if (wordToGuess.length === response.first().content.length) {
                       if (wordToGuess === response.first().content.toLowerCase()) {
+                        // TypeError: wordToGuess.join is not a function
+                        // wordToGuess é uma string e nao um array!!
                         const embeddescriptionwithtried = lang.hangman_embeddescriptionwithtried.replace('%triedletters', triedLetters.join(', ')).replace('%word', `\`\`${wordToGuess.join(' ')}\`\``);
 
                         const embedtitlecorrect = lang.hangman_embedtitlecorrectword.replace('%author', turn === 1 ? msg.author.tag : mention.tag).replace('%word', response.first().content.toLowerCase());
@@ -392,7 +394,7 @@ module.exports = class hangmanCommand extends LenoxCommand {
         }
         catch (error) {
           const noanswer = lang.hangman_noanswer.replace('%word', wordToGuess);
-          return msg.channel.send(noanswer);
+          return msg.channel.send(error.toString());
         }
       }
     }
