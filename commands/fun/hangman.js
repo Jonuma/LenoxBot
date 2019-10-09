@@ -195,7 +195,7 @@ module.exports = class hangmanCommand extends LenoxCommand {
                     /* eslint no-lonely-if: 0 */
                     if (wordToGuess.length === response.first().content.length) {
                       if (wordToGuess === response.first().content.toLowerCase()) {
-                        const embeddescriptionwithtried = lang.hangman_embeddescriptionwithtried.replace('%triedletters', triedLetters.join(', ')).replace('%word', `\`\`${newWordString.join(' ')}\`\``);
+                        const embeddescriptionwithtried = lang.hangman_embeddescriptionwithtried.replace('%triedletters', triedLetters.join(', ')).replace('%word', `\`\`${wordToGuess.join(' ')}\`\``);
 
                         const embedtitlecorrect = lang.hangman_embedtitlecorrectword.replace('%author', turn === 1 ? msg.author.tag : mention.tag).replace('%word', response.first().content.toLowerCase());
                         firstEmbed.setTitle(embedtitlecorrect);
@@ -352,6 +352,7 @@ module.exports = class hangmanCommand extends LenoxCommand {
                   const embedtitlecorrectnomention = lang.hangman_embedtitlecorrectnomentionword.replace('%word', response.first().content.toLowerCase());
                   embedtitlechances = lang.hangman_embedtitlechances.replace('%chances', chances);
                   if (wordToGuess === response.first().content.toLowerCase()) {
+                    embeddescriptionwithtried = lang.hangman_embeddescriptionwithtried.replace('%triedletters', triedLetters.join(', ')).replace('%word', `\`\`${wordToGuess.join(' ')}\`\``);
                     firstEmbed.setTitle(embedtitlecorrectnomention);
                     firstEmbed.setFooter(embedtitlechances);
                     firstEmbed.setDescription(embeddescriptionwithtried);
